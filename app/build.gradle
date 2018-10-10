@@ -73,38 +73,37 @@ dependencies {
 
     // retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    api 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
 
     // room
     kapt "android.arch.persistence.room:compiler:1.1.1"
     api 'android.arch.persistence.room:runtime:1.1.1'
     implementation 'android.arch.persistence.room:rxjava2:1.1.1'
 
-    // kotlin
+    // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.ext.kotlinVersion"
 
-    // Kotlin Reflection
-    implementation "org.jetbrains.kotlin:kotlin-reflect:1.2.51"
-
-    // multidex
+    // Multidex
     implementation 'com.android.support:multidex:1.0.3'
 
-    // glide
+    // Glide
     implementation "com.github.bumptech.glide:glide:$glideVersion"
     kapt "com.github.bumptech.glide:compiler:$glideVersion"
 
     // LiveData + ViewModel
     implementation "android.arch.lifecycle:extensions:$rootProject.archLifecycleVersion"
 
-    //Shimmer
+    // Shimmer
     implementation 'com.facebook.shimmer:shimmer:0.2.0'
 
-    // easy image
+    // Easy image
     implementation 'com.github.jkwiecien:EasyImage:2.0.3'
 
-
-    //Stetho
+    // Stetho
     implementation 'com.facebook.stetho:stetho:1.5.0'
+
+    // Kotlin Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:0.30.2-eap13"
 }
