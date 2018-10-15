@@ -1,18 +1,19 @@
-package br.com.melgarejo.apptemplateslim.data.remote.client
+package br.com.melgarejo.apptemplateslim.data.remote.exception
 
+import br.com.melgarejo.apptemplateslim.data.remote.deserializer.ApiErrorsDeserializer
 import java.io.IOException
 
 import okhttp3.ResponseBody
 import java.net.SocketTimeoutException
 
 class RequestException private constructor(val errorCode: Int?,
-    val errorMessage: String?,
-    val errorType: ErrorType,
-    val throwable: Throwable?) : Exception() {
+                                           val errorMessage: String?,
+                                           val errorType: ErrorType,
+                                           val throwable: Throwable?) : Exception() {
 
     companion object {
         fun httpError(errorCode: Int, errorBody: ResponseBody? = null): RequestException {
-            val message = ApiErrorsFormatter.deserialize(errorBody)?.let {
+            val message = ApiErrorsDeserializer.deserialize(errorBody)?.let {
                 if (it.errors != null) {
                     it.errors.joinToString("\n")
                 } else {
